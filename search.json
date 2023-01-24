@@ -1,0 +1,107 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Simulation Finit Elements with FENICS",
+    "section": "",
+    "text": "This page we show how to use the package FENICS to simulate partial differential equations. This notes are based on the book."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "edp.html",
+    "href": "edp.html",
+    "title": "Classification of partrial differential equations",
+    "section": "",
+    "text": "A PDE is a differential equation that involves partial derivatives, which are derivatives with respect to more than one variable. The partial derivatives are usually denoted by \\(\\frac{\\partial}{\\partial x_i}\\). When the function dependent of time is denoted by \\(u(x(t),y(t),t)\\), the PDE is called a partrial differential equation of evolution. To find the solution of a PDE, the equation should and boundary conditions, which depend on natural equations."
+  },
+  {
+    "objectID": "edp.html#elliptical-pde",
+    "href": "edp.html#elliptical-pde",
+    "title": "Classification of partrial differential equations",
+    "section": "Elliptical PDE",
+    "text": "Elliptical PDE\nWe say the EDP is elliptical if \\(a_2^2-a_1a_3<0\\), This type of EDP is using to solve the stacionary problem, that is, the equation is independent of time."
+  },
+  {
+    "objectID": "edp.html#parabolic-pde",
+    "href": "edp.html#parabolic-pde",
+    "title": "Classification of partrial differential equations",
+    "section": "Parabolic PDE",
+    "text": "Parabolic PDE\nWe say the EDP is parabolic if \\(a_2^2-a_1a_3=0\\), This type of EDP is using to solve the problem of evolution, that is, the equation is dependent of time."
+  },
+  {
+    "objectID": "edp.html#hyperbolic-pde",
+    "href": "edp.html#hyperbolic-pde",
+    "title": "Classification of partrial differential equations",
+    "section": "Hyperbolic PDE",
+    "text": "Hyperbolic PDE\nWe say the EDP is hyperbolic if \\(a_2^2-a_1a_3>0\\), This type of EDP is using to solve the problem of evolution, that is, the equation is dependent of time. But a diiference of the parabolic PDE, the solution of the hyperbolic PDE is not unique beacuse it can admit discontinuities nad rarefaction waves."
+  },
+  {
+    "objectID": "edp.html#linear-pde",
+    "href": "edp.html#linear-pde",
+    "title": "Classification of partrial differential equations",
+    "section": "Linear PDE",
+    "text": "Linear PDE\nA classification of PDEs are linear and nonlinear. The lienal eaquation if all coefficients of the partial derivatives are constants, the general form of a linear PDE is\n\\[a_1u_{xx} + a_2u_{xy} + a_3u_{yx} + a_4u_{yy} + a_5u_x + a_6u_y + a_7u = f(x,y),\\] where \\(a_i\\) and \\(u\\) are functions that dependent of variables \\(x\\) and \\(y\\) (independent variables)."
+  },
+  {
+    "objectID": "edp.html#non-linear-pde",
+    "href": "edp.html#non-linear-pde",
+    "title": "Classification of partrial differential equations",
+    "section": "Non-linear PDE",
+    "text": "Non-linear PDE\nA non-linear PDE is a PDE in which the partial derivative coefficients depend on the incognite function."
+  },
+  {
+    "objectID": "edp.html#semi-linear-pde",
+    "href": "edp.html#semi-linear-pde",
+    "title": "Classification of partrial differential equations",
+    "section": "Semi-linear PDE",
+    "text": "Semi-linear PDE\nThe coefficients of the second derivatives of a semi-linear PDE are functions that are dependent on the independent variables only.\nNote tha is \\(u(x,y)\\) is continuos in \\(x\\) and \\(y\\), then \\(u_{yx}=u_{xy}\\), thus we can write the last equation as \\[a_1u_{xx} + a_2u_{xy} + a_4u_{yy} +\\cdots = f(x,y).\\]\nThis notation can be useful to classificate the equation, thus we are using the conic section to characterize the equation as elliptical, parabolic, or hyperbolic"
+  },
+  {
+    "objectID": "edp.html#some-examples-of-pde",
+    "href": "edp.html#some-examples-of-pde",
+    "title": "Classification of partrial differential equations",
+    "section": "Some examples of PDE",
+    "text": "Some examples of PDE\n\nHeat equation\nWave equation\nLaplace’s equation\nPoisson’s equation\nHelmoltz equation\nSchrodinger equation\nBurgers equation\nNavier-Stokes equation"
+  },
+  {
+    "objectID": "introFEM.html",
+    "href": "introFEM.html",
+    "title": "Introduction to FEM",
+    "section": "",
+    "text": "FEM is a numerical method to aaproximate solved the differential equation by a finite number of points. The method is based on the idea that the solution of the differential equation can be approximated by a function that is a linear combination of a finite number of basis functions. The basis functions are chosen to be continuous and differentiable, and the coefficients of the linear combination are determined by the boundary conditions. The basis functions are usually chosen to be polynomials, but other functions can be used as well. The method is called finite element method because the basis functions are usually chosen to be piecewise polynomials, which are called finite elements. The method is also called finite element analysis because the method is used to analyze the behavior of structures.\nLet vectorial space \\(V\\) be a Hilbert space, and let \\(\\{\\phi_i\\}\\) be a set indepent linear of functions in \\(V\\). The function \\(u\\) is the solution of EDP, this can be approximate in linear combination of elements set \\(\\{\\phi_i\\}\\), that is, \\(u(x,y)=\\sum_{i=1}^n c_i\\phi_i(x,y)\\), where \\(c_i\\) are the coefficients of the linear combination. The coefficients \\(c_i\\) are determined by the boundary conditions. The method is called finite element method because the basis functions are usually chosen to be piecewise polynomials, which are called finite elements. The method is also called finite element analysis because the method is used to analyze the behavior of structures.\n\n\nLet a vector \\(u\\), we can proyection this vector in a subspace \\(V\\), which has the element \\(\\{ \\phi_0\\}\\), thus\n\\[u=c_0\\phi_0\\in V,\\] we can definete the error \\(e\\) as \\(e=u-c_0\\phi_0.\\) thus the norm is \\[\\|e\\|^2=\\|u-c_0\\phi_0\\|^2=\\|u\\|^2-2c_0\\langle u,\\phi_0\\rangle+c_0^2\\| \\phi_0\\|^2.\\]\nWe can minimize the error \\(e\\) by choosing the coefficient \\(c_0\\) that minimize the error, thus we have \\[\\frac{\\partial}{\\partial c_0}\\|e\\|^2=0,\\] and we have \\[\\frac{\\partial}{\\partial c_0}\\|e\\|^2=-2\\langle u,\\phi_0\\rangle+2c_0\\| \\phi_0\\|^2=0.\\]\nThus we have \\[c_0=\\frac{\\langle u,\\phi_0\\rangle}{\\| \\phi_0\\|^2}.\\]\nNote that qe can be a proyection of \\(u\\) in \\(V\\) if we use the fact that \\(e\\) is orthogonal to \\(V\\), thus we have \\[\\langle e,s\\phi_0\\rangle=s\\langle e,s\\phi_0\\rangle=0.\\] then \\(s=0\\) or \\(\\langle e,\\phi_0\\rangle=0.\\)\nNote that in the proyection \\(c_0=\\frac{\\langle u,\\phi_0\\rangle}{\\| \\phi_0\\|^2}\\), is similar to the minimization of the square error.\nWe can generalize this result to a set of functions \\(\\{\\phi_i\\}\\), thus we have\n\\[u=\\sum_{i=1}^n c_i\\phi_i\\in V,\\] we can definete the error \\(e\\) as \\(e=u-\\sum_{i=1}^n c_i\\phi_i.\\) thus the norm is \\[E=\\|e\\|^2=\\|u-\\sum_{i=1}^n c_i\\phi_i\\|^2=\\|u\\|^2-2\\sum_{i=1}^n c_i\\langle u,\\phi_i\\rangle+\\sum_{q=0}^n\\sum_{p=0}^n c_pc_q \\langle\\phi_p,\\phi_q\\rangle.\\]\nWe can minimize the error \\(e\\) by choosing the coefficient \\(c_i\\) that minimize the error, thus we have\n\\[\\frac{\\partial}{\\partial c_i}E=0,\\ \\ i=0,...N.\\] Note that \\[\\frac{\\partial}{\\partial c_i}c_pc_q=\\begin{cases}c_q & i=p \\text{ and } q\\neq i\\\\c_p & i\\neq p \\text{ and } q=i\\\\ 2c_i  & i=p \\text{ and } q= i\\\\ 0 & \\text{otherwise}\\end{cases}\\]\nThus we have \\[\\frac{\\partial}{\\partial c_i}E=\\sum_{p=0,p\\neq i}^n c_p\\langle \\phi_p,\\phi_q\\rangle+\\sum_{q=0,q\\neq i}^nc_q \\langle\\phi_i,\\phi_q\\rangle+2c_i \\langle\\phi_i,\\phi_i\\rangle\\]\nThus \\[\\frac{\\partial}{\\partial c_i}E=0,\\ i=0,...N.\\] implies \\[-2f\\langle u,\\phi_i\\rangle+2\\sum_{j=0}^N\\langle \\phi_j,\\phi_i\\rangle=0.\\ \\ i=0,...N.\\]\nwe can write this as linear system\n\\[\\sum_{j=0}^N\\langle \\phi_j,\\phi_i\\rangle=c_i\\langle \\phi_i,\\phi_i\\rangle,\\ \\ i=0,...N.\\]\n\\[\\sum_{j=0}^NA_{i,j}c_j=b_i,\\ \\ i=0,...N.\\] where \\(A_{i,j}=\\langle \\phi_j,\\phi_i\\rangle\\) and \\(b_i=f\\langle u,\\phi_i\\rangle\\).\nNote that the matrix \\(A\\) is symmetric.\nThe similar form of the linear system is the form of the Galerkin method.\n\nimport sympy as sym\nimport numpy as np\nimport matplotlib.pyplot as plt\ndef least_squares(f, psi, Omega):\n    N = len(psi) - 1\n    A = sym.zeros(N+1, N+1)\n    b = sym.zeros(N+1, 1)\n    x = sym.Symbol('x')\n    for i in range(N+1):\n        for j in range(i, N+1):\n            A[i,j] = sym.integrate(psi[i]*psi[j],(x, Omega[0], Omega[1]))\n            A[j,i] = A[i,j]\n        b[i,0] = sym.integrate(psi[i]*f, (x, Omega[0], Omega[1]))\n    c = A.LUsolve(b)\n    # Note: c is a sympy Matrix object, solution is in c[:,0]\n    u = 0\n    for i in range(len(psi)):\n        u += c[i,0]*psi[i]\n    return u, c\n\n\n\n10*x - 38/3\n10*x**2 - 20*x + 9\n\n\n\n\n\n\n\n\nSome time we need to aproximate the integral of a function, because the calculus is not possible, the function is not analytic or demanis a lot of time to calculate the integral. In FEM we need to aproximate the integral fast, thus we use the numerical integration. We can use the following methods to inegrate\n-   scipy.integrate.quad (precision set to $10^{-8}$),\n\n-   mpmath.quad (about machine precision),\n\n-   Trapezoidal rule based on the points in x (unknown accuracy, but increasing with the number of mesh points in x).\nThere many methods to approximate the integral, but we concentrate in the previus methods."
+  },
+  {
+    "objectID": "2dbasis.html",
+    "href": "2dbasis.html",
+    "title": "2d Basis funtions as tensor products of 1D functions",
+    "section": "",
+    "text": "Given two vectors \\(\\mathbf{u} = (u_1, u_2, \\ldots, u_n)\\) and \\(\\mathbf{v} = (v_1, v_2, \\ldots, v_m)\\), the tensor product \\(\\mathbf{u} \\otimes \\mathbf{v}\\) is defined as\n\\[\\mathbf{u} \\otimes \\mathbf{v}= \\begin{bmatrix} u_1 v_1 & u_1 v_2 & \\cdots & u_1 v_m \\\\ u_2 v_1 & u_2 v_2 & \\cdots & u_2 v_m \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ u_n v_1 & u_n v_2 & \\cdots & u_n v_m \\end{bmatrix}\\]\nGiven the vector spave \\(V_x\\) and \\(V_y\\), with basis \\(\\{\\phi_i(x)\\}_{i\\in\\mathbf{I}_x}\\) \\(\\{\\phi_j(y)\\}_{j\\in\\mathbf{I}_y}\\)and the tensor product space \\(V=V_x \\otimes V_y\\) is defined as\n\\[V = \\{\\phi_i(x) \\phi_j(y)\\}_{i\\in\\mathbf{I}_x, j\\in\\mathbf{I}_y}\\]\nThe notation for a basis function in \\(V\\) is \\(\\phi_{i,j}(x,y)=\\hat{\\phi}_i(x)\\hat{\\phi}_j(y)\\).\nWe can be written a function \\(u(x,y)\\) in \\(V\\) as \\[u=\\sum_{i\\in\\mathbf{I}_x} \\sum_{j\\in\\mathbf{I}_y} c_{i,j} \\phi_{i,j}(x,y)\\] Thus, we can use the alternative notation, we may employ a singel index, \\(u=\\sum_{k\\in\\mathbf{I}_x \\times \\mathbf{I}_y} c_k \\phi_k(x,y)=\\sum_{k\\in\\mathbf{I}_s} c_k \\phi_k(x,y)\\)."
+  },
+  {
+    "objectID": "2dbasis.html#example",
+    "href": "2dbasis.html#example",
+    "title": "2d Basis funtions as tensor products of 1D functions",
+    "section": "Example",
+    "text": "Example\nLet consider an approximation with the last squares, we have the following sets \\(V_x=\\{1,x\\}\\) and \\(V_y=\\{1,y\\}\\), thus we define the dyadi product as\n\\[V=V_x \\otimes V_y = \\{1, x, y, xy\\}\\]\nWee ca approximate the function \\(u(x,y)=(1+x^2)(1+2y^2)\\) in \\(\\Omega=[0,L_x]\\times[0,L_y]\\). So the function \\(u\\) can be approximated by least squares method as\n\\[u(x,y) \\approx \\sum_{k\\in\\mathbf{I}_s} c_k \\phi_k(x,y) = \\sum_{k\\in\\mathbf{I}_s} c_k \\hat{\\phi}_i(x)\\hat{\\phi}_j(y)\\]\nwhere \\(\\mathbf{I}_s=\\{1,2,3,4\\}\\) and \\(\\hat{\\phi}_i(x)=\\{1,x\\}\\) and \\(\\hat{\\phi}_j(y)=\\{1,y\\}\\).\nThus, \\[A_{ij} = \\int_{\\Omega} \\phi_i(x,y) \\phi_j(x,y)\\ d\\Omega=\\int_0^{L_x}\\int_0^{L_y} \\phi_i(x,y) \\phi_j(x,y)\\ dx dy,,\\]\nthus, the matrix \\(A\\) is given by\n\n\n\n\n\nand b is given by\n\n\n\n\n\nIf \\(L_x=2\\) and \\(L_y=2\\), we have the following matrix\n\\[A=\\begin{bmatrix} 4 & 4 & 4 & 4 \\\\ 4 & \\frac{16}{3} & 4 & \\frac{16}{3} \\\\ 4 & 4 & \\frac{16}{3} & \\frac{16}{3} \\\\ 4 & \\frac{16}{3} & \\frac{16}{3} & \\frac{16}{3} \\end{bmatrix},\\]\nand the vector \\(b\\) is given by\n\\[b=\\begin{bmatrix} \\frac{308}{9} \\\\ \\frac{140}{3} \\\\ 44 \\\\ 60 \\end{bmatrix},\\]\nthus, we obtain the vector \\(c\\) as\n\\[c=\\begin{bmatrix} -\\frac{1}{9} \\\\ -\\frac{2}{3} \\\\ \\frac{4}{3} \\\\ 8 \\end{bmatrix}.\\]\n\n\n\n\n\nu(x,y)= 8*x*y - 0.666666666666667*x + 1.33333333333333*y - 0.111111111111111\n\n\nApproximation of \\(u(x,y)\\) using the least squares method\n\n\n\n\n\nu(x,y)= (x**2 + 1)*(2*y**2 + 1)\n\n\nApproximation of \\(u(x,y)\\)"
+  },
+  {
+    "objectID": "aproxfem.html",
+    "href": "aproxfem.html",
+    "title": "Function approximation by finite elements",
+    "section": "",
+    "text": "We like the approximate a function \\(f\\) over a domain \\(\\Omega\\) by a piecewise linear polynomial \\(p\\). Consequently, we must define an appropriate space such that we can choose a finite base of functions that approximate \\(f\\) well and that depend of number of element in the domain and this depends on number of points in each element.\nLet the interval \\(I=[0,L]\\) and let \\(n+1\\) points \\(\\{x_i\\}_{j=0}^n\\) define a partion\n\\[\\Omega=\\{0=x_0,x_1,\\ldots,x_N=L\\}\\] of \\(\\Omega\\) into \\(n\\) subintervals \\(\\Omega^{i}=[x_{i},x_{i+1}]\\) for \\(i=0,\\ldots,N\\), we define the points \\(x_i\\) as the nodes of the mesh. Thus \\(\\Omega\\) have \\(N=N_e\\) elements and \\(N+1=N_n\\) nodes. thus\nnodes=[x_0,x_1,,x_N] elements=[[0,1],[1,2],…[N-1,N]]\nWe can create other Note that the nodes can be chosen arbitrarily and it is not necessary that they are equidistant but we use the uniform mesh for simplicity in our explanation.\n\n\n\nFinite element mesh\n\n\nWe can define a space \\(V_h\\) of continous piecewise linear function by \\[V_h=\\{v:v\\in C^0(\\Omega):v|_{\\Omega_i}\\in P_n(\\Omega_i)\\}\\] where \\(P_1(I_i)\\) is the space of polynomials of degree at most n on \\(I_i\\). We introduce"
+  },
+  {
+    "objectID": "cal.html",
+    "href": "cal.html",
+    "title": "Untitled",
+    "section": "",
+    "text": "<sympy.plotting.plot.Plot at 0x7f43af1f6040>"
+  }
+]
